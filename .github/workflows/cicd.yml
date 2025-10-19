@@ -34,13 +34,3 @@ jobs:
       - name: Deployment step
         run: echo "Deployment to Render would happen here."
 
-      # Step 6 — (Optional) Send Slack notification
-      - name: Send Slack Notification
-        if: always()
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          payload: |
-            {
-              "text": "✅ CI/CD pipeline completed for ${{ github.repository }}"
-            }
-
